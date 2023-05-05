@@ -43,31 +43,23 @@ public class UserService {
 
         List<WebSeries> webSeriesList = webSeriesRepository.findAll();
 
-//        int basicCount=0;
-//        int proCount=0;
-//        int eliteCount=0;
-
          int count=0;
 
         if(subscriptionType.toString().equals("BASIC")){
             for(WebSeries web : webSeriesList){
                 if(web.getSubscriptionType().toString().equals("BASIC"))
                     count++;
-                   // basicCount++;
             }
         }
         else if (subscriptionType.toString().equals("PRO")) {
             for(WebSeries web : webSeriesList){
                 if(web.getSubscriptionType().toString().equals("PRO") || web.getSubscriptionType().toString().equals("BASIC") )
                      count++;
-                    // proCount++;
             }
         }
         else {
             for(WebSeries web : webSeriesList){
                 count++;
-//                if(web.getSubscriptionType().toString().equals("ELITE"))
-//                    eliteCount++;
             }
         }
 

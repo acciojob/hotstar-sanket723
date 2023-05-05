@@ -41,7 +41,7 @@ public class WebSeriesService {
 
         productionHouse.getWebSeriesList().add(webSeries);
 
-        //update the rating of production house
+        //Update the rating of production house
         //Formula:
         //averagenew = averageold + (valuenew−averageold)/newsize
 
@@ -54,10 +54,9 @@ public class WebSeriesService {
         productionHouse.setRatings(updatedRating);
 
         productionHouseRepository.save(productionHouse);
-        //WebSeries updatedWebSeries =
-                webSeriesRepository.save(webSeries);
+        WebSeries updatedWebSeries = webSeriesRepository.save(webSeries);
 
-        return webSeries.getId();
+        return updatedWebSeries.getId();
     }
 
 }
